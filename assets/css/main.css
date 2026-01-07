@@ -2378,3 +2378,855 @@ body.dark-mode .page-item.active .page-link {
   color: white;
   border-color: var(--red);
 }
+
+/* --- ADDED FOR PUBLIC PAGES REFACTOR --- */
+
+/* Page Hero */
+.page-hero {
+  min-height: 50vh;
+  background: linear-gradient(135deg, var(--ivory) 0%, var(--ivory-dark) 100%);
+  padding: 100px 0 50px;
+  display: flex;
+  align-items: center;
+}
+
+.page-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--black) 0%, var(--red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: var(--grey);
+  max-width: 500px;
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 1rem;
+  display: flex;
+  list-style: none;
+}
+
+.breadcrumb-item {
+  color: var(--grey);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+  padding: 0 0.5rem;
+  color: var(--grey);
+}
+
+.breadcrumb-item.active {
+  color: var(--red);
+  font-weight: 500;
+}
+
+.breadcrumb-item a {
+  color: var(--grey);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.breadcrumb-item a:hover {
+  color: var(--red);
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+  background: var(--ivory);
+}
+
+.section-alt {
+  background: var(--ivory-dark);
+}
+
+/* Cards (Profile, Info, Official) */
+.profile-card,
+.info-card,
+.official-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+  border: 1px solid transparent;
+  overflow: hidden; /* Ensure content doesn't spill */
+}
+
+.profile-card:hover,
+.info-card:hover,
+.official-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--yellow);
+}
+
+.profile-image {
+  height: 300px;
+  background: linear-gradient(135deg, var(--red), var(--yellow));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 4rem;
+  overflow: hidden;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-content {
+  padding: 2.5rem;
+}
+
+.profile-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--black);
+}
+
+.profile-content p {
+  color: var(--grey);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.info-card {
+  padding: 2rem;
+  height: 100%;
+  border-top: 4px solid var(--red);
+  position: relative;
+}
+
+.info-card-icon {
+  font-size: 2.5rem;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.info-card h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--black);
+}
+
+.info-card p {
+  color: var(--grey);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.official-card {
+  text-align: center;
+}
+
+.official-photo {
+  height: 250px;
+  background: linear-gradient(135deg, var(--red), var(--yellow));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 4rem;
+  overflow: hidden;
+}
+
+.official-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.official-info {
+  padding: 2rem;
+}
+
+.official-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--black);
+}
+
+.official-position {
+  color: var(--red);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.official-period {
+  color: var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Map Container */
+.map-container {
+  width: 100%;
+  height: 450px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  border: 2px solid var(--yellow);
+}
+
+.map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(20%) contrast(90%);
+}
+
+body.dark-mode .map-iframe {
+  filter: grayscale(50%) invert(90%) hue-rotate(180deg);
+}
+
+/* Potensi Card Specifics */
+.potensi-image {
+  height: 250px;
+  background: linear-gradient(135deg, var(--red), var(--yellow));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.potensi-image i {
+  font-size: 4rem;
+  color: white;
+}
+
+.potensi-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--yellow);
+  color: var(--red);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.potensi-content {
+  padding: 2rem;
+}
+
+.potensi-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.potensi-type {
+  background: var(--sky-blue);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.potensi-desc {
+  color: var(--grey);
+  margin-bottom: 1.5rem;
+}
+
+.potensi-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.rating-stars {
+  color: var(--yellow);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item {
+  background: var(--ivory-light);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.detail-label {
+  font-size: 0.8rem;
+  color: var(--grey);
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.detail-value {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.btn-whatsapp:hover {
+  background: #128C7E;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Contact Page Specifics */
+.contact-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-soft);
+  height: 100%;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--yellow);
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--red), var(--yellow));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+}
+
+.contact-info h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  color: var(--grey);
+  margin-bottom: 0.5rem;
+}
+
+.form-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.form-card:hover {
+  border-color: var(--yellow);
+}
+
+.form-control {
+  background: var(--ivory-light);
+  border: 2px solid var(--ivory-dark);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: var(--black);
+  transition: var(--transition);
+  width: 100%;
+}
+
+.form-control:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 0.2rem rgba(198, 40, 40, 0.1);
+  outline: none;
+}
+
+.btn-primary-custom {
+  background: var(--red);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-primary-custom:hover {
+  background: var(--red-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+}
+
+/* Data Page Specifics */
+.data-section {
+  margin-bottom: 4rem;
+}
+
+.data-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.data-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--yellow);
+}
+
+.data-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--yellow);
+}
+
+.data-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.icon-population { background: var(--red); }
+.icon-education { background: var(--sky-blue); }
+.icon-work { background: var(--orange); }
+
+.data-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0;
+}
+
+.data-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--ivory-dark);
+}
+
+.data-item:last-child {
+  border-bottom: none;
+}
+
+.data-label {
+  color: var(--grey);
+  font-weight: 500;
+}
+
+.data-value {
+  font-weight: 600;
+  color: var(--black);
+}
+
+.data-percentage {
+  background: var(--red);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.chart-container {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+/* Layanan Page Specifics */
+.layanan-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+  border: 1px solid transparent;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.layanan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--yellow);
+}
+
+.layanan-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--red), var(--yellow));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.layanan-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--black);
+}
+
+.layanan-desc {
+  color: var(--grey);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.layanan-details {
+  border-top: 1px solid var(--ivory-dark);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.badge-gratis {
+  background: var(--green-leaf);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.apbdes-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--sky-blue);
+  position: relative;
+  overflow: hidden;
+}
+
+.apbdes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.apbdes-year {
+  background: var(--sky-blue);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.budget-item {
+  background: var(--ivory-light);
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  border-left: 4px solid transparent;
+}
+
+.budget-label {
+  color: var(--grey);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.budget-amount {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--black);
+  font-family: 'Poppins', sans-serif;
+}
+
+.budget-pendapatan { border-left-color: var(--green-leaf); }
+.budget-belanja { border-left-color: var(--red); }
+.budget-saldo { border-left-color: var(--sky-blue); }
+
+.btn-outline-custom {
+  background: transparent;
+  color: var(--red);
+  border: 2px solid var(--red);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-outline-custom:hover {
+  background: var(--red);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.rencana-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+  border: 1px solid transparent;
+  height: 100%;
+}
+
+.rencana-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--yellow);
+}
+
+.rencana-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.rencana-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+  flex: 1;
+}
+
+.rencana-year {
+  background: var(--sky-blue);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.rencana-desc {
+  color: var(--grey);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.rencana-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-box {
+  background: var(--ivory-light);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.detail-box-label {
+  font-size: 0.8rem;
+  color: var(--grey);
+  margin-bottom: 0.3rem;
+}
+
+.detail-box-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.status-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-selesai { background: var(--green-leaf); color: white; }
+.status-dalam-pengerjaan { background: var(--yellow); color: var(--black); }
+.status-perencanaan { background: var(--sky-blue); color: white; }
+
+.text-money {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+/* History Page */
+.history-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+  border: 1px solid transparent;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.history-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--yellow);
+}
+
+.history-content {
+  padding: 3rem;
+}
+
+.history-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--black);
+  border-bottom: 3px solid var(--red);
+  padding-bottom: 1rem;
+}
+
+.history-text {
+  color: var(--grey);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.history-text p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.history-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 2rem 0;
+  box-shadow: var(--shadow-soft);
+  border: 3px solid var(--yellow);
+}
+
+.image-caption {
+  text-align: center;
+  color: var(--grey);
+  font-style: italic;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive utilities for new components */
+@media (max-width: 768px) {
+  .page-hero { padding: 90px 0 30px; min-height: 40vh; }
+  .profile-image, .official-photo { height: 200px; }
+  .map-container { height: 350px; }
+  .profile-content { padding: 2rem; }
+  .info-card { padding: 1.5rem; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .data-header { flex-direction: column; text-align: center; gap: 0.5rem; }
+  .data-item { flex-direction: column; align-items: start; gap: 0.3rem; }
+  .data-percentage { margin-left: 0; }
+  .chart-wrapper { height: 250px; }
+  .layanan-card, .apbdes-card, .rencana-card { padding: 2rem; }
+  .budget-grid { grid-template-columns: 1fr; }
+  .rencana-details { grid-template-columns: 1fr; }
+  .apbdes-header { flex-direction: column; align-items: start; }
+  .history-content { padding: 2rem; }
+  .history-image { max-height: 300px; }
+}
+
+@media (max-width: 576px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .chart-wrapper { height: 200px; }
+  .history-content { padding: 1.5rem; }
+  .history-image { max-height: 250px; }
+}
