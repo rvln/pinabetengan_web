@@ -40,7 +40,7 @@ INSERT INTO statistik (penduduk, rt, rw, umkm, wisata_pertanian)
 VALUES (2500, 5, 3, 12, 4);
 
 INSERT INTO admin (username, password) 
-VALUES ('admin', '$$2y$12$MqfCfNe7n5ZWYI8QMdhxVOiin4.NLg2Y4/3pM9HAl5MKIKrZK3LV.'); 
+VALUES ('admin', '$2y$12$6Wi4jCGN6RUOO2581LbBCuy2vBB.k5Lt/YLjTW1i8yTx0CUs5dvJG'); 
 -- password: password (gunakan password_hash() di PHP untuk ganti)
 -- Tabel statistik
 CREATE TABLE IF NOT EXISTS statistik (

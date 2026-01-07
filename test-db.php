@@ -3,7 +3,7 @@
 require_once 'config/db.php';
 
 // Password yang ingin dihash
-$password = "PakUbumiS4ngkaKAlaLangit*!!&@"; // Ganti dengan password admin Anda
+$password = "pinseldesacantik"; // Ganti dengan password admin Anda
 
 // Generate hash yang benar
 $correctHash = password_hash($password, PASSWORD_DEFAULT);

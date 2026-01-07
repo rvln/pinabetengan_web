@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$db   = 'desa_pinabetengan';  // nama database
-$user = 'andro';              // user MariaDB Anda
-$pass = 'kakidikepala';       // password Anda
+$db   = 'pinsel';  // nama database
+$user = 'root';              // user MariaDB Anda
+$pass = '';       // password Anda
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
