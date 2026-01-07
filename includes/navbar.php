@@ -1,23 +1,4 @@
-<!-- ========== NAVBAR ========== -->
-<?php
-$current_page = basename($_SERVER['PHP_SELF']);
-$is_home = $current_page === 'index.php';
-
-function get_link($target, $is_home) {
-    if (strpos($target, '#') === 0) {
-        return $is_home ? $target : 'index.php' . $target;
-    }
-    return $target;
-}
-
-function is_active($page_name, $current_page) {
-    return $current_page === $page_name ? 'active' : '';
-}
-
-function is_active_dropdown($pages, $current_page) {
-    return in_array($current_page, $pages) ? 'active' : '';
-}
-?>
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-custom">
   <div class="container">
     <a class="navbar-brand-custom" href="index.php">
@@ -30,16 +11,16 @@ function is_active_dropdown($pages, $current_page) {
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link-custom <?= is_active('index.php', $current_page) ?>" href="<?= get_link('#home', $is_home) ?>">Beranda</a>
+          <a class="nav-link-custom" href="index.php">Beranda</a>
         </li>
 
         <!-- Profil Desa Dropdown -->
         <li class="nav-item dropdown">
-          <a class="nav-link-custom dropdown-toggle <?= is_active_dropdown(['profil.php'], $current_page) ?>" href="#" id="profilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link-custom dropdown-toggle" href="#" id="profilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Profil
           </a>
           <ul class="dropdown-menu" aria-labelledby="profilDropdown">
-            <li><a class="dropdown-item" href="profil.php?page=sejarah">Sejarah Desa</a></li>
+            <li><a class="dropdown-item" href="detail_sejarah.php">Sejarah Desa</a></li>
             <li><a class="dropdown-item" href="profil.php?page=visi-misi">Visi & Misi</a></li>
             <li><a class="dropdown-item" href="profil.php?page=struktur">Struktur Pemerintahan</a></li>
             <li><a class="dropdown-item" href="profil.php?page=wilayah">Wilayah & Peta</a></li>
@@ -48,7 +29,7 @@ function is_active_dropdown($pages, $current_page) {
 
         <!-- Data Desa Dropdown -->
         <li class="nav-item dropdown">
-          <a class="nav-link-custom dropdown-toggle <?= is_active_dropdown(['data.php'], $current_page) ?>" href="#" id="dataDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link-custom dropdown-toggle" href="#" id="dataDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Data
           </a>
           <ul class="dropdown-menu" aria-labelledby="dataDropdown">
@@ -58,9 +39,10 @@ function is_active_dropdown($pages, $current_page) {
             <li><a class="dropdown-item" href="data.php?page=rencana-kerja">Rencana Kerja Pemerintah</a></li>
           </ul>
         </li>
-          <!-- Layanan Desa Dropdown -->
+
+        <!-- Layanan Desa Dropdown -->
         <li class="nav-item dropdown">
-          <a class="nav-link-custom dropdown-toggle <?= is_active_dropdown(['layanan.php'], $current_page) ?>" href="#" id="layananDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link-custom dropdown-toggle" href="#" id="layananDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Layanan
           </a>
           <ul class="dropdown-menu" aria-labelledby="layananDropdown">
@@ -68,9 +50,10 @@ function is_active_dropdown($pages, $current_page) {
             <li><a class="dropdown-item" href="layanan.php?page=apbdes">APBDes</a></li>
           </ul>
         </li>
+
         <!-- Potensi Desa Dropdown -->
         <li class="nav-item dropdown">
-          <a class="nav-link-custom dropdown-toggle <?= is_active_dropdown(['potensi.php'], $current_page) ?>" href="#" id="potensiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link-custom dropdown-toggle" href="#" id="potensiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Potensi
           </a>
           <ul class="dropdown-menu" aria-labelledby="potensiDropdown">
@@ -82,23 +65,20 @@ function is_active_dropdown($pages, $current_page) {
 
         <!-- Berita Dropdown -->
         <li class="nav-item dropdown">
-          <a class="nav-link-custom dropdown-toggle <?= is_active_dropdown(['berita.php', 'berita-detail.php'], $current_page) ?>" href="#" id="beritaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link-custom dropdown-toggle" href="#" id="beritaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Berita
           </a>
           <ul class="dropdown-menu" aria-labelledby="beritaDropdown">
-            <?php
-            $kategori = $_GET['kategori'] ?? '';
-            ?>
-            <li><a class="dropdown-item <?= ($current_page == 'berita.php' && $kategori == 'kegiatan') ? 'active' : '' ?>" href="berita.php?kategori=kegiatan">Kegiatan & Program</a></li>
-            <li><a class="dropdown-item <?= ($current_page == 'berita.php' && $kategori == 'pengumuman') ? 'active' : '' ?>" href="berita.php?kategori=pengumuman">Pengumuman Resmi</a></li>
+            <li><a class="dropdown-item" href="berita.php?kategori=kegiatan">Kegiatan & Program</a></li>
+            <li><a class="dropdown-item" href="berita.php?kategori=pengumuman">Pengumuman Resmi</a></li>
           </ul>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link-custom <?= is_active('kontak.php', $current_page) ?>" href="kontak.php">Kontak</a>
+          <a class="nav-link-custom" href="kontak.php">Kontak</a>
         </li>
       </ul>
-      <div class="d-flex gap-3 align-items-center">
+      <div class="d-flex gap-2 align-items-center">
         <a class="btn-login-custom" href="login.php">Login</a>
         <button class="btn-theme-toggle" id="themeToggle">
           <i class="fas fa-moon"></i>
